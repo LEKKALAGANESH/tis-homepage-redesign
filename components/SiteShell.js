@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownRight, ArrowUpRight, ChevronDown, Compass, Moon, MoveUpRight,
   Play, Sparkles, Sun, X, Menu, Quote, ArrowRight
@@ -34,7 +34,23 @@ const testimonials = [
 ];
 
 function Reveal({ children, className = "", delay = 0 }) {
-  return <div className={"reveal " + className} style={{ "--delay": delay + "ms" }}>{children}</div>;
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={ref} className={"reveal " + (visible ? "is-visible " : "") + className} style={{ "--delay": delay + "ms" }}>{children}</div>;
 }
 
 function InteractiveLayer() {
@@ -58,7 +74,13 @@ function InteractiveLayer() {
   }, []);
 
   useEffect(() => {
+    const saved = window.localStorage.getItem("tis-theme");
+    if (saved) setDark(saved === "dark");
+  }, []);
+
+  useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
+    window.localStorage.setItem("tis-theme", dark ? "dark" : "light");
   }, [dark]);
 
   return <>
