@@ -40,8 +40,14 @@ app/
   layout.js
   page.js
   globals.css
+  icon.svg
 components/
-  SiteShell.js
+  sections/    Hero, Stats, About, Academics, Life, Testimonials, Admissions
+  layout/      Header, Footer
+  animation/   Reveal, ScrollProgress, CustomCursor, ThemeToggle
+  ui/          Brand
+hooks/         useInView, useScrollProgress
+data/          content.js (nav, stats, programs, life, testimonials)
 docs/
   PRD.md
   REQUIREMENTS.md
@@ -57,6 +63,7 @@ docs/
   DECISIONS.md
   ASSIGNMENT.md
   DELIVERY.md
+  REVIEW-NOTES.md
 ```
 
 ## 🎯 Assessment alignment

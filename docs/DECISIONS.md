@@ -65,3 +65,33 @@ This document records decisions and their rationale. It is intentionally explici
 **Decision:** Prefer simple, understandable optimization patterns and verify performance before introducing complex abstractions.
 
 **Rationale:** Avoids over-engineering while protecting interaction quality.
+
+## ADR-007 — Set theme and JS flag before first paint
+
+**Status:** Accepted
+
+**Context:** Reading the saved theme in a React effect caused a light flash for dark-mode users, and reveal content was hidden even when JS failed.
+
+**Decision:** A small inline script in `app/layout.js` adds `html.js` and sets `data-theme` (saved choice, else system preference) before paint. CSS hides `.reveal` only under `.js`.
+
+**Rationale:** No theme flash, and content stays visible without JS. The script is a static string — no user input reaches it.
+
+## ADR-008 — Animate through refs, not React state
+
+**Status:** Accepted
+
+**Context:** Cursor and scroll progress update on every pointer/scroll event.
+
+**Decision:** Both write `transform` directly to their DOM node via a ref (scroll is throttled to one update per animation frame).
+
+**Rationale:** Avoids a React render per event and keeps animation on the compositor.
+
+## ADR-009 — Fonts through next/font
+
+**Status:** Accepted
+
+**Context:** A Google Fonts `@import` in CSS blocks rendering.
+
+**Decision:** Load DM Sans and Playfair Display with `next/font/google`, exposed as `--font-body` and `--font-display`.
+
+**Rationale:** Self-hosted at build time, no render-blocking request, no layout shift.
