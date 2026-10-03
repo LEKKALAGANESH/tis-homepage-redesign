@@ -133,3 +133,15 @@ User interaction
 ```
 
 without searching through unrelated parts of the application.
+
+## Known gap (requirements review)
+
+All page code currently lives in `components/SiteShell.js` (~200 lines). The technical reference asks for a modular split, not a single file:
+
+- `components/sections/` — Hero, About, Academics, Life, Testimonials, Admissions
+- `components/layout/` — Header, Footer, MobileNav
+- `components/animation/` — Reveal, ScrollProgress, CustomCursor, ThemeToggle
+- `hooks/` — e.g. `useScrollProgress`, `useMousePosition`
+- `data/` — nav, stats, programs, life, testimonials
+
+This affects the Code Architecture & Quality criterion (30%).

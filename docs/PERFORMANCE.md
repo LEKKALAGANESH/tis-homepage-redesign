@@ -76,3 +76,7 @@ Review:
 - console errors.
 
 Performance should be measured or observed rather than claimed without evidence.
+
+## Known gap (requirements review)
+
+`InteractiveLayer` stores the cursor position in React state, so every mouse move re-renders it (cursor, progress bar, and theme button). The reference asks for no unnecessary re-renders. Fix: update the cursor element directly through a ref (or a spring) instead of state.
