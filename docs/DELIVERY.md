@@ -14,7 +14,7 @@
 
 - [ ] Dependencies install successfully.
 - [ ] Development server starts.
-- [ ] Production build succeeds.
+- [x] Production build succeeds.
 - [ ] No known build errors.
 - [ ] No known runtime errors.
 
@@ -78,12 +78,12 @@ Before submission:
 
 ## 8a. Still open (from requirements review)
 
-- [ ] Production build checked clean (`npm run build`).
-- [ ] Tested at 375px, 768px, and 1280px+.
+- [x] Production build checked clean (`npm run build`).
+- [x] Tested at 375px, 768px, and 1280px+.
 - [ ] Google Form submitted.
-- [ ] Split `components/SiteShell.js` into sections/layout/animation/hooks/data (see ARCHITECTURE.md).
-- [ ] Custom cursor reacts to hover and moves with `transform` (see ANIMATION.md).
-- [ ] Mouse move no longer re-renders the interactive layer (see PERFORMANCE.md).
+- [x] Split `components/SiteShell.js` into sections/layout/animation/hooks/data (see ARCHITECTURE.md).
+- [x] Custom cursor reacts to hover and moves with `transform` (see ANIMATION.md).
+- [x] Mouse move no longer re-renders the interactive layer (see PERFORMANCE.md).
 
 ## 9. Final technical walkthrough
 

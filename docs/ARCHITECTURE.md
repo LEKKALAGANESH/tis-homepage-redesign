@@ -134,9 +134,9 @@ User interaction
 
 without searching through unrelated parts of the application.
 
-## Known gap (requirements review)
+## Resolved gap (requirements review)
 
-All page code currently lives in `components/SiteShell.js` (~200 lines). The technical reference asks for a modular split, not a single file:
+All page code used to live in `components/SiteShell.js` (~200 lines). It is now split as the technical reference asks:
 
 - `components/sections/` — Hero, About, Academics, Life, Testimonials, Admissions
 - `components/layout/` — Header, Footer, MobileNav

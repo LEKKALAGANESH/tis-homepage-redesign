@@ -78,10 +78,24 @@
 
 - [x] P0 Add live URL to README: https://tis-homepage-redesign.vercel.app/
 - [x] P1 Add live demo link and "Brand identity retained" section to README.
-- [ ] P1 Split `components/SiteShell.js` (~200 lines) into `sections/`, `layout/`, `animation/`, `hooks/`, `data/`. Affects the 30% code grade.
-- [ ] P1 Make the custom cursor grow/change on `a` and `button` hover.
-- [ ] P1 Move the cursor with `transform: translate3d()` instead of `left/top`.
-- [ ] P1 Stop re-rendering the interactive layer on every mouse move.
-- [ ] P0 Run `npm run build` and confirm it is clean.
-- [ ] P0 Test at 375px, 768px, and 1280px+.
+- [x] P1 Split `components/SiteShell.js` (~200 lines) into `sections/`, `layout/`, `animation/`, `hooks/`, `data/`. Affects the 30% code grade.
+- [x] P1 Make the custom cursor grow/change on `a` and `button` hover.
+- [x] P1 Move the cursor with `transform: translate3d()` instead of `left/top`.
+- [x] P1 Stop re-rendering the interactive layer on every mouse move.
+- [x] P0 Run `npm run build` and confirm it is clean.
+- [x] P0 Test at 375px, 768px, and 1280px+.
 - [ ] P0 Submit the Google Form.
+
+## Phase 10 — Expert review fixes (see REVIEW-NOTES.md)
+
+- [x] P0 Section titles use `<h2>`.
+- [x] P0 Remove broken `lint` script.
+- [x] P0 Content visible without JS.
+- [x] P1 Format CSS.
+- [x] P1 No dark-mode flash; respect system theme.
+- [x] P1 Load fonts with `next/font`.
+- [x] P1 Program hover uses `transform`.
+- [x] P1 Scroll progress without React re-renders.
+- [x] P1 Mobile menu: Escape and focus handling.
+- [x] P2 Fix misleading play icon, campus-life links, and testimonial name.
+- [x] P2 Open Graph and Twitter metadata.

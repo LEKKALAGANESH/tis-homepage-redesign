@@ -20,6 +20,7 @@ This directory contains the product, design, architecture, implementation, verif
 | [Decisions](./DECISIONS.md) | Architecture and UX decision records with rationale and trade-offs |
 | [Assignment](./ASSIGNMENT.md) | Traceability from the supplied assessment/reference to project deliverables |
 | [Delivery](./DELIVERY.md) | Submission readiness, deployment, repository, and final verification checklist |
+| [Review notes](./REVIEW-NOTES.md) | Every review finding, its root cause, and the fix — walkthrough prep |
 
 ## Source of truth
 
