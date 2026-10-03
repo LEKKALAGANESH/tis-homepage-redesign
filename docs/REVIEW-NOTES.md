@@ -44,6 +44,32 @@ across it will break. Longer-term option: let `Reveal` render the element itself
 
 ## Known limits (deliberate)
 
-- No social preview **image** — add `app/opengraph-image.png` if needed.
+- Social preview image is a static `app/opengraph-image.png` (1200×630). A generated
+  `opengraph-image.js` (`next/og`) fails to build on Windows with Next 14 ("Invalid URL" loading
+  its bundled font), so the PNG was rendered once from HTML instead. Re-render it if the hero copy changes.
 - CSS is one formatted file, not per-section modules.
 - Reduced motion still uses the blanket `transition-duration` reset.
+
+## Round 4 — Security audit
+
+Scope: this is a static, prerendered marketing page. No backend, database, API routes,
+forms, login, user data, or environment variables exist.
+
+| Check | Result |
+|---|---|
+| API keys / env vars | None in code; no `process.env` use; `.env*` already gitignored |
+| Git history secrets | Full `git log --all -p` scan for key/token/password/private-key patterns: clean |
+| Admin routes, auth, access control, password hashing, database | Not applicable — none exist |
+| Forms / XSS | No forms or user input. Only `dangerouslySetInnerHTML` is the static theme boot script (no user data) |
+| Rate limiting, API endpoints, CORS | Not applicable — no endpoints; static files only, no CORS headers sent |
+| Debug mode | `next start` serves the production build; `X-Powered-By` removed (`poweredByHeader: false`) |
+| Dependencies | `npm audit` showed 1 critical (Next.js) + 1 high (PostCSS). Upgraded to Next 16.3.8, React 19.3, lucide-react 1.51 → **0 vulnerabilities** |
+| Security headers | CSP, `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, HSTS — set in `next.config.mjs` |
+| Exposed files | `/.env`, `/.git`, `/package.json`, `/next.config.mjs`, `/Requirements`, `/docs/*`, `/.next/*`, `/node_modules/*` all return 404 |
+
+**CSP trade-off:** `script-src` allows `'unsafe-inline'` because the page is statically prerendered and
+Next inlines its hydration data plus the theme boot script. Nonces would force per-request dynamic
+rendering. Risk is low: there is no user input anywhere on the page to inject.
+
+**If a backend is ever added** (contact form, admissions API): validate input server-side, rate-limit
+the endpoint, keep secrets in Vercel env vars (never `NEXT_PUBLIC_*`), and revisit the CSP.

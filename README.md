@@ -15,8 +15,8 @@ A premium, responsive single-page redesign of the Tula's International School ho
 - Responsive targets for mobile, tablet, and desktop
 
 ## 🛠 Stack
-- Next.js 14 App Router
-- React 18
+- Next.js 16 App Router
+- React 19
 - CSS with design tokens and responsive media queries
 - Lucide React icons
 - No backend, CMS, database, or authentication

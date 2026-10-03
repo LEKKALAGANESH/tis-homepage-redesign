@@ -12,7 +12,7 @@ export const metadata = {
   title,
   description,
   openGraph: { title, description, url: "/", siteName: "Tula's International School", type: "website" },
-  twitter: { card: "summary", title, description },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 // Runs before first paint: marks JS as available (for reveal animations) and applies the
