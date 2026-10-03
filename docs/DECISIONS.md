@@ -95,3 +95,13 @@ This document records decisions and their rationale. It is intentionally explici
 **Decision:** Load DM Sans and Playfair Display with `next/font/google`, exposed as `--font-body` and `--font-display`.
 
 **Rationale:** Self-hosted at build time, no render-blocking request, no layout shift.
+
+## ADR-010 — Upgrade to Next 16 / React 19 for security
+
+**Status:** Accepted
+
+**Context:** `npm audit` flagged every Next.js release below 16.3 (critical) and a bundled PostCSS (high). Most advisories target features this site does not use, but the brief requires a clean audit.
+
+**Decision:** Upgrade to Next 16.3.8, React 19.3 and lucide-react 1.51. Add security headers and disable `X-Powered-By` in `next.config.mjs`.
+
+**Rationale:** 0 known vulnerabilities. Verified by a clean production build and a full browser pass (cursor, theme, reveals, progress bar, mobile menu, 0 console errors/CSP violations).
