@@ -92,3 +92,7 @@ Motion should be tested on:
 - reduced-motion settings;
 - keyboard navigation;
 - touch input.
+
+## Known gap (requirements review)
+
+The custom cursor follows the mouse but does not react to hoverable elements. The brief asks it to scale or change opacity over `<a>` and `<button>`. It is also positioned with `left/top`; the reference recommends `transform: translate3d()` to avoid layout work and keep 60 FPS.

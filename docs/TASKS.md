@@ -73,3 +73,15 @@
 - [ ] P0 Update README.
 - [ ] P1 Complete documentation folder.
 - [ ] P1 Perform final assessment traceability review.
+
+## Phase 9 — Gaps found in requirements review
+
+- [x] P0 Add live URL to README: https://tis-homepage-redesign.vercel.app/
+- [x] P1 Add live demo link and "Brand identity retained" section to README.
+- [ ] P1 Split `components/SiteShell.js` (~200 lines) into `sections/`, `layout/`, `animation/`, `hooks/`, `data/`. Affects the 30% code grade.
+- [ ] P1 Make the custom cursor grow/change on `a` and `button` hover.
+- [ ] P1 Move the cursor with `transform: translate3d()` instead of `left/top`.
+- [ ] P1 Stop re-rendering the interactive layer on every mouse move.
+- [ ] P0 Run `npm run build` and confirm it is clean.
+- [ ] P0 Test at 375px, 768px, and 1280px+.
+- [ ] P0 Submit the Google Form.

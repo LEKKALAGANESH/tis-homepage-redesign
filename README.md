@@ -65,7 +65,13 @@ The supplied technical reference weights Code Architecture & Quality (30%), Anim
 ## 🧭 Content source
 The assessment requires retaining TIS brand identity and core copy. The implementation uses documented TIS positioning and source-backed details while avoiding unsupported claims.
 
+## 🎨 Brand identity retained
+- School name, "Modern Gurukul" positioning, and core copy from tis.edu.in
+- Real facts: founded 2012, Dehradun campus, CBSE classes IV–XII, contact number
+- Admissions, contact, FAQ, and careers links point to the official site
+
 ## 🔗 Links
+- Live demo: https://tis-homepage-redesign.vercel.app/
 - Repository: https://github.com/LEKKALAGANESH/tis-homepage-redesign
 - TIS: https://tis.edu.in/
 - Admissions: https://tis.edu.in/admission-procedure/

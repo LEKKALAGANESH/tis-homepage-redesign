@@ -7,8 +7,8 @@
 - [ ] README explains project purpose.
 - [ ] README explains setup.
 - [ ] README identifies actual technology choices.
-- [ ] README contains the live deployment URL.
-- [ ] README contains the repository URL.
+- [x] README contains the live deployment URL.
+- [x] README contains the repository URL.
 
 ## 2. Build
 
@@ -74,7 +74,16 @@ Before submission:
 - [ ] deployment loads without blocking errors;
 - [ ] production assets resolve;
 - [ ] interactions work on the deployed version;
-- [ ] deployment URL is documented.
+- [x] deployment URL is documented: https://tis-homepage-redesign.vercel.app/
+
+## 8a. Still open (from requirements review)
+
+- [ ] Production build checked clean (`npm run build`).
+- [ ] Tested at 375px, 768px, and 1280px+.
+- [ ] Google Form submitted.
+- [ ] Split `components/SiteShell.js` into sections/layout/animation/hooks/data (see ARCHITECTURE.md).
+- [ ] Custom cursor reacts to hover and moves with `transform` (see ANIMATION.md).
+- [ ] Mouse move no longer re-renders the interactive layer (see PERFORMANCE.md).
 
 ## 9. Final technical walkthrough
 
